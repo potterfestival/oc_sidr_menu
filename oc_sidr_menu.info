@@ -1,0 +1,10 @@
+name = oc sidr menu
+description = lets you create sidr menu for drupal.
+package = OC
+core = 7.x
+configure = admin/ocsidrmenu/config
+
+; Information added by Drupal.org packaging script on 2015-11-06
+version = "7.x-1.0"
+core = "7.x"
+
