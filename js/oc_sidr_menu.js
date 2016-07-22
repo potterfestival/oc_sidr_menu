@@ -52,7 +52,22 @@ jQuery(document).ready(function() {
    /*
     * Make it so swipe left closes the menu.
     */
-   jQuery('body').swipe( {
+   jQuery('#sidr').swipe( {
+        //Single swipe handler for left swipes
+        swipeLeft: function () {
+            var status = jQuery.sidr('status', 'sidr');       
+            if(status.opened != false)
+            {
+                jQuery.sidr('close', 'sidr');
+            }
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+        threshold: 45
+    });
+    /*
+     * Make swipe work on the UL menu
+     */
+    jQuery('#sidr ul').swipe( {
         //Single swipe handler for left swipes
         swipeLeft: function () {
             var status = jQuery.sidr('status', 'sidr');       
