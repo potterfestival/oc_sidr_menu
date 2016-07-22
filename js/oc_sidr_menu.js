@@ -43,20 +43,10 @@ jQuery(document).ready(function() {
        if(status.opened == false)
        {
         jQuery.sidr('open', 'sidr');
-        jQuery('html, body').animate({
-                    scrollTop: jQuery("#sidr").offset().top
-                }, 100);
        }
        else
        {
-           jQuery.sidr('close', 'sidr');
-           setTimeout(function(){
-               jQuery.sidr('open', 'sidr');
-               jQuery('html, body').animate({
-                    scrollTop: jQuery("#sidr").offset().top
-                }, 100);
-           },400)
-           
+           jQuery.sidr('close', 'sidr');           
        }
        
        return false;
