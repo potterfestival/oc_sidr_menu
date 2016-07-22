@@ -33,8 +33,6 @@ jQuery(document).ready(function() {
   /*
    * handle open/close of menu with custom selector.
    */
- 
-   //jQuery(Drupal.settings.oc_sidr_menu.btn_selector).unbind('click');
    //It works even if you just resize the window.
    jQuery('body').on('click',Drupal.settings.oc_sidr_menu.btn_selector,function(){
         debugger;
@@ -54,10 +52,14 @@ jQuery(document).ready(function() {
    /*
     * Make it so swipe left closes the menu.
     */
-   jQuery('#sidr').swipe( {
+   jQuery('body').swipe( {
         //Single swipe handler for left swipes
         swipeLeft: function () {
-            jQuery.sidr('close', 'sidr');
+            var status = jQuery.sidr('status', 'sidr');       
+            if(status.opened != false)
+            {
+                jQuery.sidr('close', 'sidr');
+            }
         },
         //Default is 75px, set to 0 for demo so any distance triggers swipe
         threshold: 45
