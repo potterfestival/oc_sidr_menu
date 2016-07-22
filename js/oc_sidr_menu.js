@@ -52,7 +52,7 @@ jQuery(document).ready(function() {
    /*
     * Make it so swipe left closes the menu.
     */
-   jQuery('#sidr , #sidr ul').swipe( {
+   jQuery('#sidr-swipe-fix').swipe( {
         //Single swipe handler for left swipes
         swipeLeft: function () {
             var status = jQuery.sidr('status', 'sidr');       

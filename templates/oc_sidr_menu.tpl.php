@@ -5,10 +5,13 @@
 * and open the template in the editor.
 */
 ?>
+
 <div id="sidr">
+    <div id="sidr-swipe-fix" style="width: 100vw;height: 100%;z-index: 100000;top:0;left:0;">
     <div class='col-md-12 oc_sidr_menu_header'>
         
     </div>
+    
 <ul>
 <?php
 foreach($menus as $menu)
@@ -54,4 +57,5 @@ foreach($menus as $menu)
 echo $footer_html;
 ?>
     </div>
+</div>
 </div>
