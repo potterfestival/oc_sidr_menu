@@ -35,15 +35,25 @@ jQuery(document).ready(function() {
    */
    //It works even if you just resize the window.
    jQuery('body').on('click',Drupal.settings.oc_sidr_menu.btn_selector,function(){
-        debugger;
        //jQuery.sidr('open', 'sidr');
+
        var status = jQuery.sidr('status', 'sidr');       
        if(status.opened == false)
        {
-        jQuery.sidr('open', 'sidr');
+            var swipeOptions =
+            {
+               swipeLeft:menu_swipeLeft,
+               threshold:45
+            }
+            jQuery("body").swipe( swipeOptions);
+            //Bind swipe event so that we can turn it off later..so mobile
+            //doesent bug.
+            
+            jQuery.sidr('open', 'sidr');
        }
        else
        {
+           jQuery("body").swipe("destroy");
            jQuery.sidr('close', 'sidr');           
        }
        
@@ -52,16 +62,14 @@ jQuery(document).ready(function() {
    /*
     * Make it so swipe left closes the menu.
     */
-   jQuery('#sidr').swipe( {
-        //Single swipe handler for left swipes
-        swipeLeft: function () {
-            var status = jQuery.sidr('status', 'sidr');       
-            if(status.opened != false)
-            {
-                jQuery.sidr('close', 'sidr');
-            }
-        },
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
-        threshold: 45
-    });
+    function menu_swipeLeft()
+    {
+        var status = jQuery.sidr('status', 'sidr');       
+        if(status.opened != false)
+        {
+            jQuery("body").swipe("destroy");
+            jQuery.sidr('close', 'sidr');
+        }
+        return true;
+    }
 });
