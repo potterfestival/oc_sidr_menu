@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
   /*
   * setup sidr menu
   */
-  jQuery('#simple-menu').sidr();
+  jQuery('#simple-menu').sidr({side: 'right'});
   /*
    * If a child has active trail , make sure it is not hidden on view.
    */
@@ -42,7 +42,7 @@ jQuery(document).ready(function() {
        {
             var swipeOptions =
             {
-               swipeLeft:menu_swipeLeft,
+               swipeRight:menu_swipeLeft,
                threshold:45
             }
             jQuery("body").swipe( swipeOptions);
