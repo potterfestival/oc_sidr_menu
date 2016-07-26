@@ -47,7 +47,6 @@ jQuery(document).ready(function() {
             }
             jQuery("body").swipe( swipeOptions);
             //disable page scroll
-            jQuery('body').css('overflow','hidden');
             
             jQuery.sidr('open', 'sidr');
        }
@@ -70,7 +69,7 @@ jQuery(document).ready(function() {
         {
             
             jQuery("body").swipe("destroy");
-            jQuery('body').css('overflow','auto');
+            
             jQuery.sidr('close', 'sidr');
         }
         return true;
