@@ -19,7 +19,7 @@ function oc_sidr_menu_admin($form, &$form_state) {
   # the drupal checkboxes form field definition
     $form['oc_sidr_selected_menu'] = array(
       '#title' => t('Pizza Toppings'),
-      '#type' => 'radios',
+      '#type' => 'checkboxes',
       '#default_value' => variable_get('oc_sidr_selected_menu',''),
       '#description' => t('Select the pizza toppings you would like.'),
       '#options' => $available_menus,
