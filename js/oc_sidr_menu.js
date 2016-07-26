@@ -42,18 +42,23 @@ jQuery(document).ready(function() {
        {
             var swipeOptions =
             {
-               swipeRight:menu_swipeLeft,
-               threshold:45
+               swipeRight:menu_swipeClose,
+               threshold:25
             }
             jQuery("body").swipe( swipeOptions);
-            //Bind swipe event so that we can turn it off later..so mobile
-            //doesent bug.
+            //disable page scroll
+            jQuery('body').on('scroll touchmove mousewheel', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+              })
             
             jQuery.sidr('open', 'sidr');
        }
        else
        {
            jQuery("body").swipe("destroy");
+           jQuery('body').off('scroll touchmove mousewheel'); //reenable scroll.
            jQuery.sidr('close', 'sidr');           
        }
        
@@ -62,7 +67,7 @@ jQuery(document).ready(function() {
    /*
     * Make it so swipe left closes the menu.
     */
-    function menu_swipeLeft()
+    function menu_swipeClose()
     {
         var status = jQuery.sidr('status', 'sidr');       
         if(status.opened != false)
