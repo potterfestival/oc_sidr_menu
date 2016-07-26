@@ -43,9 +43,11 @@ jQuery(document).ready(function() {
             var swipeOptions =
             {
                swipeRight:menu_swipeClose,
-               threshold:25
+               threshold:25,
+               allowPageScroll:"none"
             }
             jQuery("body").swipe( swipeOptions);
+            
             //disable page scroll
             
             jQuery.sidr('open', 'sidr');
