@@ -48,14 +48,17 @@ jQuery(document).ready(function() {
             }
             jQuery("body").swipe( swipeOptions);
             
-            //disable page scroll
+            //Make close menu button available for bootstrap theme
+            jQuery('.navbar-toggle').toggleClass('pull-left');
+            jQuery('.navbar-toggle').toggleClass('mobile-menu-left');
             
             jQuery.sidr('open', 'sidr');
        }
        else
        {
            jQuery("body").swipe("destroy");
-           jQuery('body').css('overflow','auto');
+           jQuery('.navbar-toggle').toggleClass('mobile-menu-left');
+           jQuery('.navbar-toggle').toggleClass('pull-left');
            jQuery.sidr('close', 'sidr');           
        }
        
@@ -71,7 +74,8 @@ jQuery(document).ready(function() {
         {
             
             jQuery("body").swipe("destroy");
-            
+            jQuery('.navbar-toggle').toggleClass('pull-left');
+            jQuery('.navbar-toggle').toggleClass('mobile-menu-left');
             jQuery.sidr('close', 'sidr');
         }
         return true;

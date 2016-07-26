@@ -2,3 +2,12 @@
 {
     margin-left: 10px !important;
 }
+
+/*
+* Handles overwriting bootstraps styles for proper mobile display
+with sidr.
+*/
+.mobile-menu-left
+{
+    margin-left: 15px;
+}
