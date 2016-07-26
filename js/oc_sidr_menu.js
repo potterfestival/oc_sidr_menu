@@ -72,7 +72,9 @@ jQuery(document).ready(function() {
         var status = jQuery.sidr('status', 'sidr');       
         if(status.opened != false)
         {
+            
             jQuery("body").swipe("destroy");
+            jQuery('body').off('scroll touchmove mousewheel'); //reenable scroll.
             jQuery.sidr('close', 'sidr');
         }
         return true;
