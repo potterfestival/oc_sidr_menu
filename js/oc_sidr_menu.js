@@ -49,21 +49,29 @@ jQuery(document).ready(function() {
             jQuery("body").swipe( swipeOptions);
             
             //Make close menu button available for bootstrap theme
-            jQuery('.navbar-toggle').toggleClass('pull-left');
-            jQuery('.navbar-toggle').toggleClass('mobile-menu-left');
-            
             jQuery.sidr('open', 'sidr');
        }
        else
        {
            jQuery("body").swipe("destroy");
-           jQuery('.navbar-toggle').toggleClass('mobile-menu-left');
-           jQuery('.navbar-toggle').toggleClass('pull-left');
            jQuery.sidr('close', 'sidr');           
        }
        
        return false;
    });
+   /*
+    * Handle closing of menu via special btn.
+    */
+   jQuery('.oc-sidr-close-btn').click(function(){
+       var status = jQuery.sidr('status', 'sidr');       
+        if(status.opened != false)
+        {
+            
+            jQuery("body").swipe("destroy");
+            jQuery.sidr('close', 'sidr');
+        }
+        return false;
+   })
    /*
     * Make it so swipe left closes the menu.
     */
@@ -74,8 +82,6 @@ jQuery(document).ready(function() {
         {
             
             jQuery("body").swipe("destroy");
-            jQuery('.navbar-toggle').toggleClass('pull-left');
-            jQuery('.navbar-toggle').toggleClass('mobile-menu-left');
             jQuery.sidr('close', 'sidr');
         }
         return true;

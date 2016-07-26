@@ -2,12 +2,10 @@
 {
     margin-left: 10px !important;
 }
-
-/*
-* Handles overwriting bootstraps styles for proper mobile display
-with sidr.
-*/
-.mobile-menu-left
+.oc_sidr_menu_header{
+    margin-bottom: 25px;
+}
+.oc_sidr_menu_header
 {
-    margin-left: 15px;
+    margin-top: 5px;
 }

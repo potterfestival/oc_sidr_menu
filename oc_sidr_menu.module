@@ -42,7 +42,8 @@ function oc_sidr_menu_block_view($delta = '') {
             drupal_add_css(drupal_get_path('module', 'oc_sidr_menu') . '/css/jquery.sidr.dark.css');
             drupal_add_js(array('oc_sidr_menu' => array('btn_selector' => variable_get('oc_sidr_menu_selector',''))), 'setting');
             
-            $block['content'] = theme('oc_sidr_menu',array('menus' => array(variable_get('oc_sidr_selected_menu','')),'footer_html' => variable_get('oc_sidr_menu_footer_html','')));
+            $block['content'] = theme('oc_sidr_menu',array('menus' => array(variable_get('oc_sidr_selected_menu','')),'footer_html' => variable_get('oc_sidr_menu_footer_html','')
+                , 'header_html' => variable_get('oc_sidr_menu_header_html','')));
         }
         else {
           $block['content'] = '';

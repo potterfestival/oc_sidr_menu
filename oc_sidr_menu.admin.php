@@ -31,7 +31,7 @@ function oc_sidr_menu_admin($form, &$form_state) {
   $form['oc_sidr_menu_header_html'] = array(
         '#type' => 'textarea',
         '#title' => t('Header html'),
-        '#default_value' => variable_get('oc_sidr_menu_header_html',''),
+        '#default_value' => variable_get('oc_sidr_menu_header_html','<i  class="fa fa-times fa-2x pull-right oc-sidr-close-btn" aria-hidden="true"></i>'),
         '#attributes' => array(
             'placeholder' => t('html'),
         ),
