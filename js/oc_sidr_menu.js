@@ -42,7 +42,7 @@ jQuery(document).ready(function() {
        {
             var swipeOptions =
             {
-               swipeRight:menu_swipeClose,
+               swipeRight: oc_sidr_menu_close,
                threshold:25,
                allowPageScroll:"none"
             }
@@ -53,8 +53,7 @@ jQuery(document).ready(function() {
        }
        else
        {
-           jQuery("body").swipe("destroy");
-           jQuery.sidr('close', 'sidr');           
+           oc_sidr_menu_close();         
        }
        
        return false;
@@ -63,19 +62,13 @@ jQuery(document).ready(function() {
     * Handle closing of menu via special btn.
     */
    jQuery('.oc-sidr-close-btn').click(function(){
-       var status = jQuery.sidr('status', 'sidr');       
-        if(status.opened != false)
-        {
-            
-            jQuery("body").swipe("destroy");
-            jQuery.sidr('close', 'sidr');
-        }
+        oc_sidr_menu_close();
         return false;
    })
    /*
     * Make it so swipe left closes the menu.
     */
-    function menu_swipeClose()
+    function oc_sidr_menu_close()
     {
         var status = jQuery.sidr('status', 'sidr');       
         if(status.opened != false)
