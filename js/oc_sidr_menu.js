@@ -43,7 +43,7 @@ jQuery(document).ready(function() {
             var swipeOptions =
             {
                swipeRight: oc_sidr_menu_close,
-               threshold:4,
+               threshold:20,
                allowPageScroll:"none",
                excludedElements: "label, button, input, select, textarea, .noSwipe"
             }
