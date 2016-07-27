@@ -43,11 +43,11 @@ jQuery(document).ready(function() {
             var swipeOptions =
             {
                swipeRight: oc_sidr_menu_close,
-               threshold:25,
-               allowPageScroll:"none"
+               threshold:4,
+               allowPageScroll:"none",
+               excludedElements: "label, button, input, select, textarea, .noSwipe"
             }
             jQuery("body").swipe( swipeOptions);
-            
             //Make close menu button available for bootstrap theme
             jQuery.sidr('open', 'sidr');
        }
@@ -71,6 +71,7 @@ jQuery(document).ready(function() {
     */
     function oc_sidr_menu_close()
     {
+        debugger
         var status = jQuery.sidr('status', 'sidr');       
         if(status.opened != false)
         {
@@ -80,3 +81,4 @@ jQuery(document).ready(function() {
         }
         return true;
     }
+    
