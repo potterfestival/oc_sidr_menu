@@ -13,3 +13,7 @@
 {
     margin-bottom: 15px;
 }
+.stop-scrolling {
+  height: 100% !important;
+  overflow: hidden;
+}

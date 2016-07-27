@@ -44,10 +44,11 @@ jQuery(document).ready(function() {
             {
                swipeRight: oc_sidr_menu_close,
                threshold:20,
-               allowPageScroll:"none",
+               allowPageScroll:"vertical",
                excludedElements: "label, button, input, select, textarea, .noSwipe"
             }
             jQuery("body").swipe( swipeOptions);
+            jQuery('body').toggleClass('stop-scrolling');
             //Make close menu button available for bootstrap theme
             jQuery.sidr('open', 'sidr');
        }
@@ -71,14 +72,14 @@ jQuery(document).ready(function() {
     */
     function oc_sidr_menu_close()
     {
-        debugger
         var status = jQuery.sidr('status', 'sidr');       
         if(status.opened != false)
         {
             
             jQuery("body").swipe("destroy");
+            jQuery('body').toggleClass('stop-scrolling');
             jQuery.sidr('close', 'sidr');
         }
-        return true;
+        return false;
     }
     
