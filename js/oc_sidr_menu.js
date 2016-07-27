@@ -43,9 +43,8 @@ jQuery(document).ready(function() {
             var swipeOptions =
             {
                swipeRight: oc_sidr_menu_close,
-               threshold:4,
-               allowPageScroll:"vertical",
-               excludedElements: "label, button, input, select, textarea, .noSwipe"
+               threshold:15,
+               excludedElements: "label, button,img, input, select, textarea, .noSwipe"
             }
             jQuery("body").swipe( swipeOptions);
             //Make close menu button available for bootstrap theme
