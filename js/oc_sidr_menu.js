@@ -65,8 +65,9 @@ jQuery(document).ready(function() {
         oc_sidr_menu_close();
         return false;
    })
-   /*
-    * Make it so swipe left closes the menu.
+});
+    /*
+    * Close oc_sidr_menu properly.
     */
     function oc_sidr_menu_close()
     {
@@ -79,4 +80,3 @@ jQuery(document).ready(function() {
         }
         return true;
     }
-});
