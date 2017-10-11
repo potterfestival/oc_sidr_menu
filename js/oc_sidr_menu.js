@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
                swipeRight: oc_sidr_menu_close,
                threshold:20,
                allowPageScroll:"vertical",
-               excludedElements: "label,a, button, input, select, textarea, .noSwipe"
+               excludedElements: "label, button, input, select, textarea, .noSwipe"
             }
             jQuery("body").swipe( swipeOptions);
             jQuery('body').toggleClass('stop-scrolling');

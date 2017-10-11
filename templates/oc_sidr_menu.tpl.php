@@ -12,7 +12,8 @@
             echo $header_html;
         ?>
     </div>
- <div class='col-md-12'> 
+ <div class='col-md-12 oc_sidr_menu_content'> 
+     <div class='swipe-magic' style="z-index: 100000;">
     <ul>
     <?php
     foreach(reset($menus) as $menu)
@@ -25,6 +26,10 @@
              */
             foreach($menu_data as $menu_elem) {
                 $links = $menu_elem['link'];
+                if($links['hidden'])
+                {
+                    continue;
+                }
                 $active_trail = $links['in_active_trail'] ? 'active' : '';
                 if(empty($menu_elem['below']))
                 {
@@ -43,6 +48,10 @@
                     {
                         //[in_active_trail]	boolean	1	
                         $child_link = $child_menu['link'];
+                        if($child_link['hidden'])
+                        {
+                            continue;
+                        }
                         $active_trail = $child_link['in_active_trail'] ? 'active' : '';
                         echo "<li class='".$active_trail."'><a href=".url($child_link['link_path']).">".$child_link['link_title']."</a></li>";
                     }
@@ -56,6 +65,7 @@
     ?>
 
     </ul>
+         </div>
 </div>
     <div class='col-md-12 oc_sidr_menu_footer'>
 <?php
